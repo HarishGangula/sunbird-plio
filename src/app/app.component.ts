@@ -4,7 +4,8 @@ import { data } from './quml-library-data';
 import { data as plioData } from './plio-data'
 import * as _ from 'lodash-es'
 import { QuestionCursorImplementationService } from './question-cursor-implementation.service';
-
+import { $ } from 'protractor';
+declare var jQuery:any;
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -15,6 +16,7 @@ export class AppComponent {
 
   eventsSubject: Subject<any> = new Subject<any>();
   isQUMLPlayerShown: boolean = false
+  showProceed = false;
   videoDisplay = 'block'
   QumlPlayerConfig = data;
   markers = _.map(plioData, (marker) => {
@@ -99,12 +101,20 @@ export class AppComponent {
 
   getPlayerEvents(event) {
     console.log('get player events', JSON.stringify(event));
+    let time = this.questionCursor.getTime(event.item.id)
+    this.showProceed = true
+    if(event.pass == 'No') {
+      jQuery(`div[data-marker-time='${time}']`).css('background-color', 'red')
+    } else {
+      jQuery(`div[data-marker-time='${time}']`).css('background-color', 'green')
+    }
   }
 
   getTelemetryEvents(event) {
     console.log('event is for telemetry', JSON.stringify(event));
   }
   proceedOrClose() {
+    this.showProceed = false
     this.isQUMLPlayerShown = false
     this.videoDisplay = 'block'
     this.eventsSubject.next({ action: 'play', data: null });

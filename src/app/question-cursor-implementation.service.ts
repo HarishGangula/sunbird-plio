@@ -76,4 +76,8 @@ export class QuestionCursorImplementationService implements QuestionCursor {
         config.metadata.childNodes = [this.currentQuestion.identifier]
         return config
     }
+
+    getTime(identifier: string) {
+        return _.find(plioData, (data) => data.question.identifier === identifier)['time']
+    }
 }

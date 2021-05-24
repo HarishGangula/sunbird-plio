@@ -21,7 +21,7 @@
     "@angular/router": "~8.2.14",
     "@project-sunbird/client-services": "^3.9.7",
     "@project-sunbird/sb-styles": "0.0.7",
-    "@project-sunbird/sunbird-quml-player-v8": "file:../sunbird-quml-player/dist/quml-library/project-sunbird-sunbird-quml-player-v8-4.0.3.tgz",
+    "@project-sunbird/sunbird-quml-player-v8": "https://raw.githubusercontent.com/HarishGangula/sunbird-video-player/makers/dist/sunbird-video-player/project-sunbird-sunbird-quml-player-v8-4.0.3.tgz",
     "@project-sunbird/sunbird-video-player-v8": "https://raw.githubusercontent.com/HarishGangula/sunbird-video-player/makers/dist/sunbird-video-player/project-sunbird-sunbird-video-player-v8-4.0.2.tgz",
     "@project-sunbird/telemetry-sdk": "0.0.26",
     "katex": "^0.11.1",
