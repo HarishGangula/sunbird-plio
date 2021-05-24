@@ -1,0 +1,31 @@
+.player-grid {
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    // grid-template-columns: 70% 30%;
+    gap: 1.5rem;
+    padding-top: 4rem;
+    @media screen and (max-width:768px) {
+    grid-template-columns: 100%;
+    gap: 0px;
+    }
+  }
+  
+  // .video-player-container {
+  //   position: absolute;
+  //   width: 90%;
+  //   border: 1px solid #ccc;
+  // }
+
+  #close {
+    width: 22px;
+    float: right;
+    margin-bottom: 6%;
+    cursor: pointer;
+  }
+
+  #proceed {
+    position: fixed;
+    bottom: 10%;
+    right: 10%;
+  }

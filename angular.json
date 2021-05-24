@@ -25,12 +25,32 @@
             "aot": false,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**/*",
+                "input": "node_modules/@project-sunbird/sunbird-video-player-v8/lib/assets/",
+                "output": "/assets/"
+              },
+              {
+                "glob": "**/*",
+                "input": "node_modules/@project-sunbird/sunbird-quml-player-v8/lib/assets/",
+                "output": "/assets/"
+              }
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/video.js/dist/video-js.min.css",
+              "node_modules/@project-sunbird/sunbird-video-player-v8/lib/assets/videojs.markers.min.css",
+              "./node_modules/katex/dist/katex.min.css",
+              "src/assets/quml-styles/quml-carousel.css",
+              "node_modules/@project-sunbird/sb-styles/assets/_styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/@project-sunbird/telemetry-sdk/index.js",
+              "./node_modules/katex/dist/katex.min.js",
+              "node_modules/video.js/dist/video.js",
+              "node_modules/@project-sunbird/sunbird-video-player-v8/lib/assets/videojs-markers.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -93,9 +113,13 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/@project-sunbird/sb-styles/assets/_styles.scss",
+              "node_modules/video.js/dist/video-js.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/@project-sunbird/telemetry-sdk/index.js"
+            ]
           }
         },
         "lint": {
@@ -124,6 +148,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "sunbird-plio"
 }
